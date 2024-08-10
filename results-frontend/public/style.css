@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+canvas {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#voteCounts {
+    margin-top: 20px;
+}
