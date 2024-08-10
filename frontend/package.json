@@ -1,0 +1,11 @@
+{
+    "name": "frontend",
+    "version": "1.0.0",
+    "description": "Front-end for voting",
+    "main": "index.html",
+    "scripts": {
+      "start": "nginx -g 'daemon off;'"
+    },
+    "dependencies": {}
+  }
+  
