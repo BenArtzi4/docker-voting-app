@@ -1,36 +1,33 @@
-version: '3.8'
-
+version: '3'
 services:
   frontend:
-    image: frontend-image
+    build:
+      context: ./frontend
     ports:
-      - "8080:80"
-    networks:
-      - app-network
+      - "8080:8080"
 
   backend:
-    image: backend-image
+    build:
+      context: ./backend
     ports:
-      - "8082:8082"
-    networks:
-      - app-network
+      - "3000:3000"
+    depends_on:
+      - db
 
   db:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: db_pass123
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: votes_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user_password
     ports:
       - "3306:3306"
-    networks:
-      - app-network
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   results-frontend:
-    image: results-frontend-image
+    build:
+      context: ./results-frontend
     ports:
-      - "8081:80"
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
+      - "8081:8080"
