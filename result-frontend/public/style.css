@@ -13,3 +13,7 @@ canvas {
     max-width: 600px;
     margin: 0 auto;
 }
+
+#voteCounts {
+    margin-top: 20px;
+}
