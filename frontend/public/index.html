@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote for Your Favorite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vote for Your Favorite</h1>
+        <div class="vote-option" onclick="vote('android')">
+            <img src="android-logo.png" alt="Android">
+            <p>Android</p>
+        </div>
+        <div class="vote-option" onclick="vote('apple')">
+            <img src="apple-logo.png" alt="Apple">
+            <p>Apple</p>
+        </div>
+    </div>
+    <script>
+        function vote(option) {
+            fetch('http://backend:3000/vote', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ vote: option })
+            })
+            .then(response => response.json())
+            .then(data => alert('Vote recorded!'))
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
