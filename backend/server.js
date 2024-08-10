@@ -5,17 +5,38 @@ const port = 3000;
 
 app.use(express.json());
 
-const db = mysql.createConnection({
+const dbConfig = {
     host: 'db',
     user: 'user',
     password: 'user_password',
     database: 'votes_db'
-});
+};
 
-db.connect(err => {
-    if (err) throw err;
-    console.log('Connected to database');
-});
+let db;
+function connectWithRetry() {
+    db = mysql.createConnection(dbConfig);
+
+    db.connect(err => {
+        if (err) {
+            console.error('Error connecting to the database:', err);
+            console.log('Retrying connection in 5 seconds...');
+            setTimeout(connectWithRetry, 5000);
+        } else {
+            console.log('Connected to the database');
+        }
+    });
+
+    db.on('error', err => {
+        if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+            console.log('Database connection lost. Reconnecting...');
+            connectWithRetry();
+        } else {
+            throw err;
+        }
+    });
+}
+
+connectWithRetry();
 
 app.post('/vote', (req, res) => {
     const { vote } = req.body;
