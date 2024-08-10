@@ -44,4 +44,8 @@ app.get('/results', (req, res) => {
 
 app.listen(port, () => {
     console.log(`Backend listening at http://localhost:${port}`);
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 91fc81ecca6d49046dbb1e0bc1e81b78a41906ff
