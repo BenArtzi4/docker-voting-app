@@ -66,3 +66,15 @@ app.get('/results', (req, res) => {
 app.listen(port, () => {
     console.log(`Backend listening at http://localhost:${port}`);
 });
+
+process.on('SIGINT', () => {
+    console.log('Gracefully shutting down...');
+    db.end(err => {
+        if (err) {
+            console.error('Error during disconnection:', err);
+        } else {
+            console.log('Disconnected from the database');
+        }
+        process.exit();
+    });
+});
