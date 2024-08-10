@@ -4,7 +4,7 @@ services:
     build:
       context: ./frontend
     ports:
-      - "8080:8080"
+      - "8080:80"  # Map port 80 inside the container to port 8080 on the host
     networks:
       - default
 
@@ -36,7 +36,7 @@ services:
     build:
       context: ./results-frontend
     ports:
-      - "8081:8080"
+      - "8081:80"  # Assuming this service also uses port 80 inside the container
     networks:
       - default
 
