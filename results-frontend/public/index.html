@@ -17,7 +17,7 @@
         <canvas id="voteChart"></canvas>
     </div>
     <script>
-        fetch('http://backend:3000/results')
+        fetch('http://localhost:3000/results')
         .then(response => response.json())
         .then(data => {
             const androidVotes = data.android || 0;
