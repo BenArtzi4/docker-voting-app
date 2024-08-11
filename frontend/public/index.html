@@ -20,14 +20,14 @@
     </div>
     <script>
         function vote(option) {
-            console.log('Vote button clicked:', option); // Log to see if the function is called
+            console.log('Vote button clicked:', option);
 
             if (!navigator.onLine) {
-                alert('You are offline. Please check your network connection.');
+                console.error('You are offline. Please check your network connection.');
                 return;
             }
 
-            fetch('http://localhost:3000/vote', { // Updated to use localhost for development
+            fetch('http://localhost:3000/vote', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -41,12 +41,10 @@
                 return response.json();
             })
             .then(data => {
-                alert('Vote recorded!'); // Alert when vote is recorded
                 console.log('Vote recorded successfully:', data);
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Failed to record vote. Please try again.');
             });
         }
     </script>
