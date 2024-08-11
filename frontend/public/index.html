@@ -9,13 +9,18 @@
 <body>
     <div class="container">
         <h1>Vote for Your Favorite</h1>
-        <div class="vote-option" onclick="vote('android')">
-            <img src="android-logo.png" alt="Android">
-            <p>Android</p>
+        <div id="vote-options">
+            <div class="vote-option" onclick="vote('android')">
+                <img src="android-logo.png" alt="Android">
+                <p>Android</p>
+            </div>
+            <div class="vote-option" onclick="vote('ios')">
+                <img src="apple-logo.png" alt="Apple">
+                <p>iOS</p>
+            </div>
         </div>
-        <div class="vote-option" onclick="vote('ios')">
-            <img src="apple-logo.png" alt="Apple">
-            <p>ios</p>
+        <div id="thank-you-message" style="display: none;">
+            <h2>Thanks for voting, have a great day!</h2>
         </div>
     </div>
     <script>
@@ -42,6 +47,10 @@
             })
             .then(data => {
                 console.log('Vote recorded successfully:', data);
+
+                // Hide vote options and show thank you message
+                document.getElementById('vote-options').style.display = 'none';
+                document.getElementById('thank-you-message').style.display = 'block';
             })
             .catch(error => {
                 console.error('Error:', error);
