@@ -27,7 +27,7 @@
                 return;
             }
 
-            fetch('http://backend:3000/vote', {
+            fetch('http://localhost:3000/vote', { // Updated to use localhost for development
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
