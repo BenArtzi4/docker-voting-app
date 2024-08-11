@@ -1,6 +1,6 @@
 # Docker Voting App
 
-This project is a simple voting application where users can vote for their preferred mobile platform: Android or Apple. The application consists of a front-end for voting, a back-end API built with Node.js, a MySQL database to store the votes, and a front-end for displaying the results in a pie chart. All components are containerized using Docker.
+This project is a simple voting application where users can vote for their preferred mobile platform: Android or iOS. The application consists of a front-end for voting, a back-end API built with Node.js, a MySQL database to store the votes, and a front-end for displaying the results in a pie chart. All components are containerized using Docker.
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ This project is a simple voting application where users can vote for their prefe
 
 ## Features
 
-- **Vote Page**: Users can vote for their favorite platform (Android or Apple).
+- **Vote Page**: Users can vote for their favorite platform (Android or iOS).
 - **Real-Time Results**: Results are displayed in a pie chart showing the percentage of votes for each option.
 - **Dockerized**: All components (frontend, backend, database) are containerized using Docker.
 
@@ -46,8 +46,8 @@ This project is a simple voting application where users can vote for their prefe
 
 ## Usage
 
-- **Vote**: Open the voting page in your browser and cast your vote.
-- **View Results**: Check the results page to see the live voting results, including the number of votes for Android and Apple.
+- **Vote**: Open the voting page in your browser and cast your vote for either Android or iOS.
+- **View Results**: Check the results page to see the live voting results, including the number of votes for Android and iOS.
 
 ## Web Application Flow Diagram
 
