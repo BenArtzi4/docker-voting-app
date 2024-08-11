@@ -35,7 +35,7 @@ services:
     build:
       context: ./results-frontend
     ports:
-      - "8081:80"  # Assuming this service also uses port 80 inside the container
+      - "8081:80"
     networks:
       - default
 
