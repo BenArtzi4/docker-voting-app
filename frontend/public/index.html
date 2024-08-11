@@ -20,6 +20,8 @@
     </div>
     <script>
         function vote(option) {
+            console.log('Vote button clicked:', option); // Log to see if the function is called
+
             if (!navigator.onLine) {
                 alert('You are offline. Please check your network connection.');
                 return;
@@ -38,7 +40,10 @@
                 }
                 return response.json();
             })
-            .then(data => alert('Vote recorded!'))
+            .then(data => {
+                alert('Vote recorded!'); // Alert when vote is recorded
+                console.log('Vote recorded successfully:', data);
+            })
             .catch(error => {
                 console.error('Error:', error);
                 alert('Failed to record vote. Please try again.');
