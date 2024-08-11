@@ -42,7 +42,7 @@ connectWithRetry();
 
 app.post('/vote', (req, res) => {
     const { vote } = req.body;
-    if (vote !== 'android' && vote !== 'apple') {
+    if (vote !== 'android' && vote !== 'ios') {
         return res.status(400).json({ error: 'Invalid vote option' });
     }
 
@@ -68,7 +68,7 @@ app.get('/results', (req, res) => {
         const data = results.reduce((acc, row) => {
             acc[row.choice] = row.count;
             return acc;
-        }, { android: 0, apple: 0 });
+        }, { android: 0, ios: 0 });
         res.json(data);
     });
 });
