@@ -59,11 +59,11 @@ The diagram below illustrates the flow of the web application, from the user int
 
 ### Voting Page
 
-![Voting Page](path-to-screenshot)  #TODO - add screenshot
+![votes-page](https://github.com/user-attachments/assets/df701b7a-91a0-4ca6-af89-08d408e27cee)
 
 ### Results Page
 
-![Results Page](path-to-screenshot)  #TODO - add screenshot
+![results-page](https://github.com/user-attachments/assets/16d64bbc-8906-4b68-a5f4-f109849dc702)
 
 ## Contributing
 
