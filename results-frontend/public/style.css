@@ -3,17 +3,39 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    padding: 20px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
 }
 
-canvas {
-    max-width: 600px;
-    margin: 0 auto;
+h1 {
+    margin-bottom: 30px;
+    color: #333;
 }
 
 #voteCounts {
-    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#voteCounts p {
+    font-size: 18px;
+    color: #555;
+}
+
+canvas {
+    max-width: 100%;
+    margin: 0 auto;
 }
